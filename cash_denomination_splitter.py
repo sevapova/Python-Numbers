@@ -1,18 +1,27 @@
-amount = int(input("Pul miqdorini kiriting ($): "))
+'''1. cash_denomination_splitter.py – Kupyuraga ajratish (pulni kupyuralarga ajratish)'''
 
-k_50 = amount // 50
-amount = amount % 50
-print("$50 kupyuradan:", k_50, "ta")
+from num2words import num2words
 
-k_10 = amount // 10
-amount = amount % 10
-print("$10 kupyuradan:", k_10, "ta")
+pul=int(input("Pul miqdorini kiriting ($):"))
+words_en=num2words(pul)
+words_ru=num2words(pul,lang='ru')
 
-k_5 = amount // 5
-amount = amount % 5
-print("$5 kupyuradan:", k_5, "ta")
+x_50 = pul//50
+pul=pul%50
+print("%50 kupyuradan:",x_50,"ta")
 
-k_1 = amount // 1
-amount = amount % 1
-print("$1 kupyuradan:", k_1, "ta")
+x_10=pul//10
+pul=pul%10
+print("$10 kupyuradan:",x_10,"ta")
 
+x_5=pul//5
+pul=pul%5
+print("$5 kupyuradan:",x_5,"ta")
+
+x_1=pul//1
+pul=pul%1
+print("$1 kupyuradan:",x_1,"ta")
+
+print(f"${pul:,.1f}")
+print(words_en)
+print(words_ru)
